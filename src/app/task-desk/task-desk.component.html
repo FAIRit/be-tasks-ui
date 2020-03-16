@@ -1,0 +1,31 @@
+<div class="container">
+  <h3>Tasks</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Points</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{task.name}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.points}}</td>
+      <td>
+        <a href="/tasks/update/{{task.id}}" class="btn btn-lg btn-secondary btn-block">update</a>
+        <a href="/tasks/delete/{{task.id}}" class="btn btn-lg btn-secondary btn-block">delete</a>
+        <a href="/tasksToDo/add/{{task.id}}" class="btn btn-lg btn-secondary btn-block">add to child</a>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="4">
+        <a href="/tasks/add" class="btn btn-lg btn-secondary btn-block">Add task</a>
+        <a href="/parents" class="btn btn-lg btn-secondary btn-block">Cancel</a>
+      </th>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,38 @@
+<form class="form-signin" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  <h1 class="h3 mb-3 font-weight-normal">Update task</h1>
+
+  <table class="table">
+    <tbody>
+    <tr>
+      <th scope="row">Name</th>
+      <td>
+        <p>
+          <label for="inputName" class="sr-only">Name</label>
+          <input type="text" formControlName="name" id="inputName" class="form-control" placeholder="Name"
+                 required autofocus>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td>
+        <label for="inputDescription" class="sr-only">Password</label>
+        <input type="text" formControlName="description" id="inputDescription" class="form-control"
+               placeholder="Description"
+               required>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Points</th>
+      <td>
+        <label for="inputPoints" class="sr-only">Points</label>
+        <input type="number" formControlName="points" id="inputPoints" class="form-control" placeholder="Points"
+               required>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Update task</button>
+  <a href="/tasks" class="btn btn-lg btn-secondary btn-block">Cancel</a>
+</form>

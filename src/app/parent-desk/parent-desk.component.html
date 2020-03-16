@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h3>Parent</h3>
+      <a href="/parents/update" class="btn btn-lg btn-secondary btn-block">Update</a>
+      <a href="/parents/delete" class="btn btn-lg btn-secondary btn-block">Delete</a>
+    </div>
+    <div class="col-sm">
+      <h3>Tasks</h3>
+      <a href="/tasks" class="btn btn-lg btn-secondary btn-block">View</a>
+    </div>
+    <div class="col-sm">
+      <h3>Children</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Gender</th>
+          <th>Birth date</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let child of children">
+          <td>{{child.name}}</td>
+          <td>{{child.email}}</td>
+          <td>{{child.gender}}</td>
+          <td>{{child.birthDate}}</td>
+          <td>
+            <a href="/children/{{child.id}}" class="btn btn-lg btn-secondary btn-block">view</a>
+            <a href="/children/update/{{child.id}}" class="btn btn-lg btn-secondary btn-block">update</a>
+            <a href="/children/delete/{{child.id}}" class="btn btn-lg btn-secondary btn-block">delete</a>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="4">
+            <a href="/children/add" class="btn btn-lg btn-secondary btn-block">Add child</a>
+          </th>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
