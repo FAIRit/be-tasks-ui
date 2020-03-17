@@ -30,4 +30,16 @@ export class ChildDeskComponent implements OnInit {
       this.tasksToDo = tasksToDo;
     })
   }
+
+  onSubmit(taskToDoId){
+    this.taskToDoService.setApproved(taskToDoId).subscribe(
+      data => {
+        window.alert('SUCCESS');
+        window.location.reload();
+      },
+      error => {
+        window.alert('ERROR')
+      }
+    )
+  }
 }

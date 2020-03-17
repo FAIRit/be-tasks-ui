@@ -22,6 +22,7 @@ import {AddTaskToDoComponent} from './add-task-to-do/add-task-to-do.component';
 import {ChildDeskComponent} from './child-desk/child-desk.component';
 import {DeleteTaskToDoComponent} from './delete-task-to-do/delete-task-to-do.component';
 import {UpdateTaskToDoComponent} from './update-task-to-do/update-task-to-do.component';
+import { ChildOwnDeskComponent } from './child-own-desk/child-own-desk.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {UpdateTaskToDoComponent} from './update-task-to-do/update-task-to-do.com
     AddTaskToDoComponent,
     ChildDeskComponent,
     DeleteTaskToDoComponent,
-    UpdateTaskToDoComponent
+    UpdateTaskToDoComponent,
+    ChildOwnDeskComponent
   ],
   imports: [
     BrowserModule,

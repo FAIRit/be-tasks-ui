@@ -23,9 +23,14 @@ export class TaskToDoService {
               private authenticationService: AuthenticationService,) {
   }
 
-  getTasksToDo(childId) {
+  getTasksToDo(childId?) {
     const headers = this.authenticationService.getHeaders();
-    return this.httpClient.get<Array<TaskToDo>>('http://localhost:8080/api/tasksToDo?childId=' + childId, {headers})
+
+    if(childId) {
+      return this.httpClient.get<Array<TaskToDo>>('http://localhost:8080/api/tasksToDo?childId=' + childId, {headers})
+    } else {
+      return this.httpClient.get<Array<TaskToDo>>('http://localhost:8080/api/tasksToDo/byChild', {headers})
+    }
   }
 
   getTaskToDo(taskToDoId){
@@ -50,5 +55,15 @@ export class TaskToDoService {
   deleteTaskToDo(taskToDoId){
     const headers = this.authenticationService.getHeaders();
     return this.httpClient.delete('http://localhost:8080/api/tasksToDo/' + taskToDoId, {headers});
+  }
+
+  setDone(taskToDoId){
+    const headers = this.authenticationService.getHeaders();
+    return this.httpClient.put('http://localhost:8080/api/tasksToDo/' + taskToDoId + '/done', {},{headers});
+  }
+
+  setApproved(taskToDoId){
+    const headers = this.authenticationService.getHeaders();
+    return this.httpClient.put('http://localhost:8080/api/tasksToDo/' + taskToDoId + '/approved', {},{headers});
   }
 }

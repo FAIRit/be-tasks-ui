@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     (this.authenticationService.login(username, password).subscribe(
         data => {
           if (data.type == "PARENT") {
-            this.router.navigate(['/parent'])
+            this.router.navigate(['/parents'])
           } else if (data.type == "CHILD") {
             this.router.navigate(['/child'])
           }

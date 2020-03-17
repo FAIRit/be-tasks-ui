@@ -17,6 +17,7 @@ import {AddTaskToDoComponent} from "./add-task-to-do/add-task-to-do.component";
 import {ChildDeskComponent} from "./child-desk/child-desk.component";
 import {DeleteTaskToDoComponent} from "./delete-task-to-do/delete-task-to-do.component";
 import {UpdateTaskToDoComponent} from "./update-task-to-do/update-task-to-do.component";
+import {ChildOwnDeskComponent} from "./child-own-desk/child-own-desk.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -25,6 +26,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'parents/update', component: UpdateParentComponent},
   {path: 'parents/delete', component: DeleteParentComponent},
+
+  {path: 'child', component: ChildOwnDeskComponent},
 
   {path: 'children/:id', component: ChildDeskComponent},
   {path: 'children/add', component: AddChildComponent},

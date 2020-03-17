@@ -7,21 +7,16 @@
         <thead>
         <tr>
           <th>Name</th>
-          <th>E-mail</th>
-          <th>Gender</th>
-          <th>Birth date</th>
+          <th>Points</th>
         </tr>
         </thead>
         <tbody>
         <tr>
           <td>{{child?.name}}</td>
-          <td>{{child?.email}}</td>
-          <td>{{child?.gender}}</td>
-          <td>{{child?.birthDate}}</td>
+          <td>{{child?.points}}</td>
         </tr>
         </tbody>
       </table>
-      <a href="/parents" class="btn btn-lg btn-secondary btn-block">Parent desk</a>
     </div>
 
     <div class="col-sm">
@@ -34,8 +29,8 @@
           <th>Points</th>
           <th>Start date</th>
           <th>Expected date</th>
-          <th>Done</th>
           <th>Finish date</th>
+          <th>Done</th>
           <th></th>
         </tr>
         </thead>
@@ -46,17 +41,14 @@
           <td>{{taskToDo.taskView.points}}</td>
           <td>{{taskToDo.startDate}}</td>
           <td>{{taskToDo.expectedDate}}</td>
-          <td>{{taskToDo.done}}</td>
           <td>{{taskToDo.finishDate}}</td>
+          <td>{{taskToDo.done}}</td>
           <td>
-            <a href="/children/{{childId}}/tasksToDo/update/{{taskToDo.id}}" class="btn btn-lg btn-secondary btn-block">update</a>
-            <a href="/children/{{childId}}/tasksToDo/delete/{{taskToDo.id}}" class="btn btn-lg btn-secondary btn-block">delete</a>
             <button (click)="onSubmit(taskToDo.id)" class="btn btn-lg btn-primary btn-block" type="button">DONE</button>
           </td>
         </tr>
         </tbody>
       </table>
-      <a href="/tasks" class="btn btn-lg btn-secondary btn-block">Add task to do for child</a>
     </div>
   </div>
 </div>

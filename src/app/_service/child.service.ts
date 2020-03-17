@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {AuthenticationService} from "./authentication.service";
+import {TaskToDo} from "./taskToDo.service";
 
 export class Child {
   constructor(
@@ -8,7 +9,8 @@ export class Child {
     public name: string,
     public gender: string,
     public email: string,
-    public birthDate: string
+    public birthDate: string,
+    public points: number
   ) {
   }
 }
@@ -20,14 +22,19 @@ export class ChildService {
               private authenticationService: AuthenticationService) {
   }
 
-  getChild(id) {
+  getChild(id?) {
     const headers = this.authenticationService.getHeaders();
-    return this.httpClient.get<Child>('http://localhost:8080/api/children/' + id, {headers});
+
+    if (id){
+      return this.httpClient.get<Child>('http://localhost:8080/api/children/' + id, {headers});
+    } else {
+      return this.httpClient.get<Child>('http://localhost:8080/api/children/', {headers});
+    }
   }
 
   getChildren() {
     const headers = this.authenticationService.getHeaders();
-    return this.httpClient.get<Array<Child>>('http://localhost:8080/api/children', {headers})
+    return this.httpClient.get<Array<Child>>('http://localhost:8080/api/children/byParent', {headers})
   }
 
   addChild(name, gender, birthDate, email, password) {
