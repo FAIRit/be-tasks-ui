@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <h3>Child</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Gender</th>
+          <th>Birth date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{child?.name}}</td>
+          <td>{{child?.email}}</td>
+          <td>{{child?.gender}}</td>
+          <td>{{child?.birthDate}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <a href="/parents" class="btn btn-lg btn-secondary btn-block">Parent desk</a>
+    </div>
+
+    <div class="col-sm">
+      <h3>Tasks to do</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Points</th>
+          <th>Start date</th>
+          <th>Expected date</th>
+          <th>Done</th>
+          <th>Finish date</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let taskToDo of tasksToDo">
+          <td>{{taskToDo.taskView.name}}</td>
+          <td>{{taskToDo.taskView.description}}</td>
+          <td>{{taskToDo.taskView.points}}</td>
+          <td>{{taskToDo.startDate}}</td>
+          <td>{{taskToDo.expectedDate}}</td>
+          <td>{{taskToDo.done}}</td>
+          <td>{{taskToDo.finishDate}}</td>
+          <td>
+            <a href="/children/{{childId}}/tasksToDo/update/{{taskToDo.id}}" class="btn btn-lg btn-secondary btn-block">update</a>
+            <a href="/children/{{childId}}/tasksToDo/delete/{{taskToDo.id}}" class="btn btn-lg btn-secondary btn-block">delete</a>
+            <button (click)="onSubmit(taskToDo.id)" class="btn btn-lg btn-primary btn-block" type="button">DONE</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <a href="/tasks" class="btn btn-lg btn-secondary btn-block">Add task to do for child</a>
+    </div>
+  </div>
+</div>

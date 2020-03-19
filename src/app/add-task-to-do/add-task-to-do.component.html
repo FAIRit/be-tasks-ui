@@ -1,0 +1,45 @@
+<form class="form-signin" [formGroup]="addForm" (ngSubmit)="onSubmit()">
+  <h1 class="h3 mb-3 font-weight-normal">Add task to do</h1>
+
+  <table class="table">
+    <tbody>
+    <tr>
+      <th scope="row">Name</th>
+      <td>
+        <p>{{task?.name}}</p>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td>
+        <p>{{task?.description}}</p>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Points</th>
+      <td>
+        <p>{{task?.points}}</p>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Expected date</th>
+      <td>
+        <label for="inputExpectedDate" class="sr-only">Expected date</label>
+        <input type="date" formControlName="expectedDate" id="inputExpectedDate" class="form-control"
+               placeholder="Expected date" required>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Child</th>
+      <td>
+        <select class="custom-select" id="inputGroupSelect01" formControlName="childId">
+          <option value="" selected>Choose...</option>
+          <option *ngFor="let child of children" value={{child.id}}>{{child.name}}</option>
+        </select>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
+  <a href="/tasks" class="btn btn-lg btn-secondary btn-block">Cancel</a>
+</form>

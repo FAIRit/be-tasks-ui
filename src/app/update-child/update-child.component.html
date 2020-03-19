@@ -1,0 +1,61 @@
+<form class="form-signin" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  <h1 class="h3 mb-3 font-weight-normal">Update child</h1>
+
+  <table class="table">
+    <tbody>
+    <tr>
+      <th scope="row">Email address</th>
+      <td>
+        <p>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" formControlName="email" id="inputEmail" class="form-control" placeholder="Email address"
+                 required autofocus>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" formControlName="password" id="inputPassword" class="form-control" placeholder="Password"
+               required>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Name</th>
+      <td>
+        <label for="inputName" class="sr-only">Name</label>
+        <input type="text" formControlName="name" id="inputName" class="form-control" placeholder="Name" required>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Gender</th>
+      <td>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="exampleRadios1"
+                 value="FEMALE" checked>
+          <label class="form-check-label" for="exampleRadios1">Female</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="exampleRadios2"
+                 value="MALE">
+          <label class="form-check-label" for="exampleRadios2">Male</label>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Birth Date</th>
+      <td>
+        <div>
+          <label for="inputBirthDate" class="sr-only">Birth Date</label>
+          <input type="date" formControlName="birthDate" id="inputBirthDate" class="form-control"
+                 placeholder="BirthDate" required>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Update account</button>
+  <a href="/parents" class="btn btn-lg btn-secondary btn-block">Cancel</a>
+</form>

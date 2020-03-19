@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
 import {AuthenticationService} from './authentication.service';
 
 export class Parent {
@@ -15,12 +14,24 @@ export class Parent {
 @Injectable({providedIn: 'root'})
 export class ParentService {
 
-  constructor(private httpClient: HttpClient, private authenticationService: AuthenticationService) {
+  constructor(private httpClient: HttpClient,
+              private authenticationService: AuthenticationService) {
   }
 
   getParent() {
     const headers = this.authenticationService.getHeaders();
     return this.httpClient.get<Parent>('http://localhost:8080/api/parents', {headers});
+  }
+
+  addParent(name, gender, email, password) {
+    return this.httpClient.post<Parent>('http://localhost:8080/api/parents', {
+      "name": name,
+      "gender": gender,
+      "userData": {
+        "email": email,
+        "password": password
+      }
+    });
   }
 
   updateParent(name, gender, email, password) {
@@ -33,5 +44,10 @@ export class ParentService {
         "password": password
       }
     }, {headers});
+  }
+
+  deleteParent() {
+    const headers = this.authenticationService.getHeaders();
+    return this.httpClient.delete<Parent>('http://localhost:8080/api/parents', {headers});
   }
 }

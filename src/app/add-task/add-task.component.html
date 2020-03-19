@@ -1,0 +1,19 @@
+<form class="form-signin" [formGroup]="addForm" (ngSubmit)="onSubmit()">
+  <h1 class="h3 mb-3 font-weight-normal">Add task</h1>
+  <p>
+    <label for="inputName" class="sr-only">Name</label>
+    <input type="text" formControlName="name" id="inputName" class="form-control" placeholder="Name" required>
+  </p>
+  <p>
+    <label for="inputDescription" class="sr-only">Description</label>
+    <input type="text" formControlName="description" id="inputDescription" class="form-control" placeholder="Description" required>
+  </p>
+  <p>
+    <label for="inputPoints" class="sr-only">Points</label>
+    <input type="number" formControlName="points" id="inputPoints" class="form-control" placeholder="Points" required>
+  </p>
+
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Create task</button>
+  <a href="/tasks" class="btn btn-lg btn-secondary btn-block">Cancel</a>
+</form>

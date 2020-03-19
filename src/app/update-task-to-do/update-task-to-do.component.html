@@ -1,0 +1,22 @@
+<form class="form-signin" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  <h1 class="h3 mb-3 font-weight-normal">Update task to do</h1>
+
+  <table class="table">
+    <tbody>
+    <tr>
+      <th scope="row">Expected date</th>
+      <td>
+        <p>
+          <label for="inputExpectedDate" class="sr-only">Expected date</label>
+          <input type="date" formControlName="expectedDate" id="inputExpectedDate" class="form-control"
+                 placeholder="Expected date"
+                 required autofocus>
+        </p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Update task to do</button>
+  <a href="/children/{{childId}}" class="btn btn-lg btn-secondary btn-block">Cancel</a>
+</form>
