@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+    <a href="/parents" class="btn btn-lg btn-secondary btn-block">Back to parent desk</a>
 
     <div class="col-sm">
       <h3>Child</h3>
@@ -10,6 +11,7 @@
           <th>E-mail</th>
           <th>Gender</th>
           <th>Birth date</th>
+          <th>Points</th>
         </tr>
         </thead>
         <tbody>
@@ -18,10 +20,10 @@
           <td>{{child?.email}}</td>
           <td>{{child?.gender}}</td>
           <td>{{child?.birthDate}}</td>
+          <td>{{child?.points}}</td>
         </tr>
         </tbody>
       </table>
-      <a href="/parents" class="btn btn-lg btn-secondary btn-block">Parent desk</a>
     </div>
 
     <div class="col-sm">
@@ -51,12 +53,39 @@
           <td>
             <a href="/children/{{childId}}/tasksToDo/update/{{taskToDo.id}}" class="btn btn-lg btn-secondary btn-block">update</a>
             <a href="/children/{{childId}}/tasksToDo/delete/{{taskToDo.id}}" class="btn btn-lg btn-secondary btn-block">delete</a>
-            <button (click)="onSubmit(taskToDo.id)" class="btn btn-lg btn-primary btn-block" type="button">DONE</button>
+            <button (click)="onSubmit(taskToDo.id)" class="btn btn-lg btn-primary btn-block" type="button">Approve
+            </button>
           </td>
         </tr>
         </tbody>
       </table>
       <a href="/tasks" class="btn btn-lg btn-secondary btn-block">Add task to do for child</a>
+    </div>
+
+    <div class="col-sm">
+      <h3>Rewards</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Points</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let reward of rewards">
+          <td>{{reward.name}}</td>
+          <td>
+            <img src="{{reward.url}}" alt="offer image" height="100" width="100">
+          </td>
+          <td>{{reward.points}}</td>
+          <td>
+            <a href="/rewards/update/{{reward.id}}" class="btn btn-lg btn-secondary btn-block">To buy</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

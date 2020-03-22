@@ -18,6 +18,9 @@ import {ChildDeskComponent} from "./child-desk/child-desk.component";
 import {DeleteTaskToDoComponent} from "./delete-task-to-do/delete-task-to-do.component";
 import {UpdateTaskToDoComponent} from "./update-task-to-do/update-task-to-do.component";
 import {ChildOwnDeskComponent} from "./child-own-desk/child-own-desk.component";
+import {AddRewardComponent} from "./add-reward/add-reward.component";
+import {DeleteRewardComponent} from "./delete-reward/delete-reward.component";
+import {UpdateRewardComponent} from "./update-reward/update-reward.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -41,7 +44,11 @@ const routes: Routes = [
 
   {path: 'tasksToDo/add/:taskId', component: AddTaskToDoComponent},
   {path: 'children/:childId/tasksToDo/update/:taskToDoId', component: UpdateTaskToDoComponent},
-  {path: 'children/:childId/tasksToDo/delete/:taskToDoId', component: DeleteTaskToDoComponent}
+  {path: 'children/:childId/tasksToDo/delete/:taskToDoId', component: DeleteTaskToDoComponent},
+
+  {path: 'rewards/add', component: AddRewardComponent},
+  {path: 'rewards/delete/:id', component: DeleteRewardComponent},
+  {path: 'rewards/update/:id', component: UpdateRewardComponent}
 ];
 
 @NgModule({

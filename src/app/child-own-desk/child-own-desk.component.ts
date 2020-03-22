@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TaskToDo, TaskToDoService} from "../_service/taskToDo.service";
-import {FormBuilder} from "@angular/forms";
 import {Child, ChildService} from "../_service/child.service";
+import {Reward, RewardService} from "../_service/reward.service";
 
 @Component({
   selector: 'app-child-own-desk',
@@ -12,9 +12,11 @@ export class ChildOwnDeskComponent implements OnInit {
 
   tasksToDo: Array<TaskToDo>;
   child: Child;
+  rewards: Array<Reward>;
 
   constructor(private taskToDoService: TaskToDoService,
-              private childService: ChildService) {
+              private childService: ChildService,
+              private rewardService: RewardService) {
   }
 
   ngOnInit() {
@@ -23,6 +25,9 @@ export class ChildOwnDeskComponent implements OnInit {
     })
     this.childService.getChild().subscribe(value => {
       this.child = value;
+    })
+    this.rewardService.getRewards().subscribe(value => {
+      this.rewards = value;
     })
   }
 
