@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {AuthenticationService} from "./authentication.service";
+import {ApiConfig} from "../_config/api.config";
 
 export class Offer {
   constructor(
@@ -20,6 +21,6 @@ export class OfferService {
 
   getOffers() {
     const headers = this.authenticationService.getHeaders();
-    return this.httpClient.get<Array<Offer>>('http://localhost:8080/api/allegro/offers', {headers})
+    return this.httpClient.get<Array<Offer>>(ApiConfig.API_URL + 'allegro/offers', {headers})
   }
 }

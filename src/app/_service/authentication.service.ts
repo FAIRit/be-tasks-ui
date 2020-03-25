@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {ApiConfig} from "../_config/api.config";
 
 export class User {
   constructor(
@@ -19,7 +20,7 @@ export class AuthenticationService {
   login(username, password) {
     let basicAuth = window.btoa(username + ':' + password);
     const headers = new HttpHeaders({Authorization: 'Basic ' + basicAuth});
-    return this.httpClient.get<User>('http://localhost:8080/api/users/validateLogin', {headers})
+    return this.httpClient.get<User>(ApiConfig.API_URL + 'users/validateLogin', {headers})
       .pipe(
         map(userData => {
           sessionStorage.setItem('username', username)
