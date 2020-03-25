@@ -21,6 +21,7 @@ import {ChildOwnDeskComponent} from "./child-own-desk/child-own-desk.component";
 import {AddRewardComponent} from "./add-reward/add-reward.component";
 import {DeleteRewardComponent} from "./delete-reward/delete-reward.component";
 import {UpdateRewardComponent} from "./update-reward/update-reward.component";
+import {HistoryDeskComponent} from "./history-desk/history-desk.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -48,7 +49,9 @@ const routes: Routes = [
 
   {path: 'rewards/add', component: AddRewardComponent},
   {path: 'rewards/delete/:id', component: DeleteRewardComponent},
-  {path: 'rewards/update/:id', component: UpdateRewardComponent}
+  {path: 'rewards/update/:id', component: UpdateRewardComponent},
+
+  {path: 'history/:childId', component: HistoryDeskComponent}
 ];
 
 @NgModule({
