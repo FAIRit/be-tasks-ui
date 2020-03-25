@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {RewardService} from "../_service/reward.service";
 
@@ -10,17 +9,14 @@ import {RewardService} from "../_service/reward.service";
 })
 export class UpdateRewardComponent implements OnInit {
 
-  updateForm: FormGroup;
   id: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private rewardService: RewardService,
-              private formBuilder: FormBuilder) {
+              private rewardService: RewardService) {
   }
 
   ngOnInit(): void {
-    this.updateForm = this.formBuilder.group({});
   }
 
   onSubmit() {

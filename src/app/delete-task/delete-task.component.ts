@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {TaskService} from "../_service/task.service";
 
@@ -9,17 +8,14 @@ import {TaskService} from "../_service/task.service";
   styleUrls: ['./delete-task.component.css']
 })
 export class DeleteTaskComponent implements OnInit {
-  deleteForm: FormGroup;
   id: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private taskService: TaskService,
-              private formBuilder: FormBuilder) {
+              private taskService: TaskService) {
   }
 
   ngOnInit(): void {
-    this.deleteForm = this.formBuilder.group({});
   }
 
   onSubmit() {

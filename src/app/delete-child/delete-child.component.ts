@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ChildService} from "../_service/child.service";
-import {FormBuilder, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -10,17 +9,14 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class DeleteChildComponent implements OnInit {
 
-  deleteForm: FormGroup;
   id: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private childService: ChildService,
-              private formBuilder: FormBuilder) {
+              private childService: ChildService) {
   }
 
   ngOnInit(): void {
-    this.deleteForm = this.formBuilder.group({});
   }
 
   onSubmit() {

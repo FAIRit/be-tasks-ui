@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Offer, OfferService} from "../_service/offer.service";
 import {RewardService} from "../_service/reward.service";
-import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-add-reward',
@@ -10,19 +9,16 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 })
 export class AddRewardComponent implements OnInit {
 
-  offers: Array<Offer>
-  addForm: FormGroup;
+  offers: Array<Offer>;
 
   constructor(private offerService: OfferService,
-              private rewardService: RewardService,
-              private formBuilder: FormBuilder) {
+              private rewardService: RewardService) {
   }
 
   ngOnInit() {
     this.offerService.getOffers().subscribe(data => {
       this.offers = data;
     })
-    this.addForm = this.formBuilder.group({});
   }
 
   onSubmit(name, price, url) {
