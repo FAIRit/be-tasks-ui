@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AuthenticationService} from './authentication.service';
+import {ApiConfig} from "../_config/api.config";
 
 export class Parent {
   constructor(
@@ -20,11 +21,11 @@ export class ParentService {
 
   getParent() {
     const headers = this.authenticationService.getHeaders();
-    return this.httpClient.get<Parent>('http://localhost:8080/api/parents', {headers});
+    return this.httpClient.get<Parent>(ApiConfig.API_URL + 'parents', {headers});
   }
 
   addParent(name, gender, email, password) {
-    return this.httpClient.post<Parent>('http://localhost:8080/api/parents', {
+    return this.httpClient.post<Parent>(ApiConfig.API_URL + 'parents', {
       "name": name,
       "gender": gender,
       "userData": {
@@ -36,7 +37,7 @@ export class ParentService {
 
   updateParent(name, gender, email, password) {
     const headers = this.authenticationService.getHeaders();
-    return this.httpClient.put('http://localhost:8080/api/parents', {
+    return this.httpClient.put(ApiConfig.API_URL + 'parents', {
       "name": name,
       "gender": gender,
       "userData": {
@@ -48,6 +49,6 @@ export class ParentService {
 
   deleteParent() {
     const headers = this.authenticationService.getHeaders();
-    return this.httpClient.delete<Parent>('http://localhost:8080/api/parents', {headers});
+    return this.httpClient.delete<Parent>(ApiConfig.API_URL + 'parents', {headers});
   }
 }

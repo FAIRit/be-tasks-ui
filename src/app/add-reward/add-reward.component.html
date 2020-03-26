@@ -1,0 +1,28 @@
+<h1 class="h3 mb-3 font-weight-normal">Add reward</h1>
+
+<div class="col-sm">
+  <h3>Offers</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let offer of offers">
+      <td>{{offer.name}}</td>
+      <td>{{offer.price}}</td>
+      <td><img src="{{offer.url}}" alt="offer image" height="100" width="100"></td>
+      <td>
+        <button (click)="onSubmit(offer.name, offer.price, offer.url)" class="btn btn-lg btn-primary btn-block"
+                type="button">Add reward
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<a href="/child" class="btn btn-lg btn-secondary btn-block">Cancel</a>

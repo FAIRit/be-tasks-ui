@@ -20,6 +20,34 @@
     </div>
 
     <div class="col-sm">
+      <div class="col-sm">
+        <h3>Rewards</h3>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Reward name</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let reward of rewards">
+            <td>{{reward.name}}</td>
+            <td>{{reward.points}}</td>
+            <td>
+              <img src="{{reward.url}}" alt="offer image" height="100" width="100"></td>
+            <td>
+              <a href="/rewards/delete/{{reward.id}}" class="btn btn-lg btn-secondary btn-block">delete</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <a href="/rewards/add" class="btn btn-lg btn-secondary btn-block">Add reward</a>
+    </div>
+
+    <div class="col-sm">
       <h3>Tasks to do</h3>
       <table class="table">
         <thead>

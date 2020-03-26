@@ -22,7 +22,11 @@ import {AddTaskToDoComponent} from './add-task-to-do/add-task-to-do.component';
 import {ChildDeskComponent} from './child-desk/child-desk.component';
 import {DeleteTaskToDoComponent} from './delete-task-to-do/delete-task-to-do.component';
 import {UpdateTaskToDoComponent} from './update-task-to-do/update-task-to-do.component';
-import { ChildOwnDeskComponent } from './child-own-desk/child-own-desk.component';
+import {ChildOwnDeskComponent} from './child-own-desk/child-own-desk.component';
+import {AddRewardComponent} from './add-reward/add-reward.component';
+import {DeleteRewardComponent} from './delete-reward/delete-reward.component';
+import {UpdateRewardComponent} from './update-reward/update-reward.component';
+import {HistoryDeskComponent} from './history-desk/history-desk.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { ChildOwnDeskComponent } from './child-own-desk/child-own-desk.component
     ChildDeskComponent,
     DeleteTaskToDoComponent,
     UpdateTaskToDoComponent,
-    ChildOwnDeskComponent
+    ChildOwnDeskComponent,
+    AddRewardComponent,
+    DeleteRewardComponent,
+    UpdateRewardComponent,
+    HistoryDeskComponent
   ],
   imports: [
     BrowserModule,
